@@ -55,3 +55,6 @@ rtv_towing_progression
 ```
 
 Check `shared/config.lua` before running: job names, towtruck models, repo locations and crafting settings are all configurable.
+
+<img width="1727" height="993" alt="image" src="https://github.com/user-attachments/assets/a84befcd-7a96-404f-8d74-da1beb86630b" />
+
