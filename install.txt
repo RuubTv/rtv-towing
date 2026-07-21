@@ -1,0 +1,24 @@
+RTV Towing install
+==================
+
+1. Put this folder in your resources as:
+   rtv-towing
+
+2. Add to server.cfg:
+   ensure rtv-towing
+
+3. Add ox_inventory items:
+   rtv_towrope
+   rtv_winch
+   rtv_tow_remote
+   rtv_repo_note
+
+4. Check shared/config.lua:
+   - job names
+   - truck models
+   - repo start/dropoff/pickup locations
+   - crafting options
+
+5. Restart:
+   restart ox_inventory
+   restart rtv-towing
