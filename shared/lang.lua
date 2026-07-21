@@ -1,0 +1,96 @@
+Lang = Lang or {}
+
+Lang.nl = {
+    no_access = 'Je hebt hier geen toegang voor.',
+    no_vehicle = 'Geen geschikt voertuig gevonden.',
+    no_target_vehicle = 'Geen doelvoertuig dichtbij gevonden.',
+    no_truck = 'Geen geschikte towtruck gevonden.',
+    too_far = 'Je staat te ver weg.',
+
+    already_attached = 'Dit voertuig staat al vast op een laadbed.',
+    attached = 'Voertuig vastgezet op laadbed.',
+    detached = 'Voertuig losgemaakt van laadbed.',
+
+    tow_source_set = 'Trekvoertuig geselecteerd. Kies nu het voertuig dat je wilt slepen.',
+    tow_started = 'Sleepkabel gekoppeld.',
+    tow_stopped = 'Sleepkabel verwijderd.',
+    tow_item_start = 'Richt op het haakpunt van het trekvoertuig.',
+    tow_item_target = 'Richt nu op het haakpunt van het voertuig dat je wilt slepen.',
+    tow_item_active = 'Sleepkabel actief.',
+    tow_item_cancelled = 'Sleepkabel actie geannuleerd.',
+    tow_wrong_vehicle = 'Je moet een ander voertuig kiezen om te slepen.',
+
+    winch_source_set = 'Winch-voertuig geselecteerd.',
+    winch_started = 'Winch gekoppeld.',
+    winch_stopped = 'Winch verwijderd.',
+    winch_pull = 'Winch trekt aan.',
+    winch_release = 'Winch viert kabel.',
+    winch_pick_vehicle = 'Kies eerst het punt op het voertuig waar de kabel vast moet.',
+    winch_pick_anchor = 'Kies nu het ankerpunt waar de kabel heen gaat.',
+    winch_point_saved = 'Punt opgeslagen.',
+    winch_cancelled = 'Winch punt geannuleerd.',
+    winch_select_help = 'Richt op de gewenste plek. Klik links om te bevestigen, Backspace om te annuleren.',
+    winch_item_start = 'Richt op het haakpunt van het voertuig.',
+    winch_item_anchor = 'Richt nu op het ankerpunt voor de winch.',
+    winch_item_active = 'Winch actief.',
+
+    repo_not_tow = 'Alleen towjob-medewerkers kunnen repo-missies doen.',
+    repo_started = 'Repo-opdracht gestart. Haal het voertuig op.',
+    repo_active = 'Je hebt al een actieve repo-opdracht.',
+    repo_none = 'Je hebt geen actieve repo-opdracht.',
+    repo_cancelled = 'Repo-opdracht geannuleerd.',
+    repo_deliver = 'Lever het voertuig hier af.',
+    repo_need_vehicle = 'Het juiste repo-voertuig moet aanwezig zijn.',
+    repo_finished = 'Repo-opdracht afgerond.',
+    repo_cooldown = 'Wacht even voordat je een nieuwe repo-opdracht start.',
+    repo_pickup_near = 'Repo-voertuig gevonden. Afleverpunt is ingesteld.',
+    repo_note_received = 'Repo note ontvangen. Voertuig: %s | Kenteken: %s',
+    repo_search_started = 'Er zijn 3 mogelijke repo-locaties toegevoegd aan je GPS. Kies zelf waar je begint.',
+    repo_vehicle_secured = 'Juiste voertuig veiliggesteld. Afleverlocatie is nu beschikbaar.',
+    repo_dropoff_ready = 'Afleverpersoon is gearriveerd op de afleverlocatie.',
+    repo_new_started = 'Nieuwe repo-opdracht aangenomen.',
+    repo_note_missing_space = 'Je hebt geen ruimte voor de repo note.',
+    repo_unload_first = 'Haal het repo voertuig eerst van het laadbed en zet hem op de afleverplek.',
+    repo_vehicle_not_at_dropoff = 'Zet het repo voertuig eerst op de afleverplek.',
+    repo_finished_choice = 'Repo afgerond. Wil je een nieuwe opdracht aannemen?',
+    repo_stop = 'Je bent gestopt met repo-opdrachten.',
+    repo_start_new = 'Nieuwe repo-opdracht aannemen',
+    repo_stop_work = 'Stoppen',
+    repo_return_truck = 'Repo vrachtwagen terugbrengen',
+    repo_return_truck_desc = 'Lever je gebruikte repo vrachtwagen weer in bij de startlocatie.',
+    repo_truck_returned = 'Repo vrachtwagen ingeleverd.',
+    repo_no_return_truck = 'Er is geen repo vrachtwagen om terug te brengen.',
+    repo_return_after_stop = 'Je kunt de repo vrachtwagen terugbrengen bij de startlocatie.',
+
+    inventory_full = 'Je inventaris zit vol.',
+
+    remote_no_item = 'Je hebt geen tow remote op zak.',
+    remote_menu = 'Tow Remote',
+
+    ramp_placed = 'Ramp geplaatst.',
+    ramp_removed = 'Ramp verwijderd.',
+    ramp_no_truck = 'Geen geschikte towtruck dichtbij gevonden.',
+    ramp_already = 'Er staat al een ramp achter deze truck.',
+
+    menu_bed = 'Laadbed',
+    menu_tow = 'Sleepkabel',
+    menu_winch = 'Winch',
+    menu_repo = 'Repo',
+
+    crafting_menu = 'Crafting',
+    crafting_open = 'Crafting openen',
+    crafting_no_access = 'Je hebt geen toegang tot deze crafting bench.',
+    crafting_no_recipes = 'Er zijn geen recepten beschikbaar.',
+    crafting_missing_items = 'Je mist benodigde materialen.',
+    crafting_success = 'Je hebt %sx %s gemaakt.',
+    crafting_cancelled = 'Crafting geannuleerd.',
+    crafting_failed = 'Crafting mislukt.',
+    crafting_too_far = 'Je staat te ver van de crafting bench.',
+    crafting_not_on_duty = 'Je moet in dienst zijn om dit te craften.',
+    crafting_grade_low = 'Je rang is te laag om dit te craften.',
+}
+
+function _L(key)
+    local locale = Config.Locale or 'nl'
+    return (Lang[locale] and Lang[locale][key]) or key
+end

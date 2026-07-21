@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RTV Towing UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <section id="actionBar" class="action-bar hidden">
+            <div class="action-glow"></div>
+            <div class="action-header">
+                <div class="brand-pill"><span class="brand-dot"></span><span>ST</span></div>
+                <div class="title-wrap"><h1 id="actionTitle">RTV Towing</h1><p id="actionSubtitle">Actieve bediening</p></div>
+            </div>
+            <div id="actionKeys" class="action-keys"></div>
+        </section>
+
+        <section id="repoNote" class="repo-note hidden">
+            <div class="repo-top">
+                <div><span class="repo-kicker">SANDY DISPATCH</span><h2 id="repoTitle">Repo Note</h2></div>
+                <div class="repo-badge">ACTIVE</div>
+            </div>
+            <div class="repo-grid">
+                <div class="repo-field"><span>Voertuig</span><strong id="repoVehicle">Onbekend</strong></div>
+                <div class="repo-field"><span>Kenteken</span><strong id="repoPlate">Onbekend</strong></div>
+            </div>
+            <div id="repoHintBox" class="repo-hint hidden"><span id="repoHintLabel">Voertuig hint</span><strong id="repoHint">Onbekend</strong></div>
+        </section>
+
+        <section id="rtvMenu" class="rtv-menu hidden">
+            <div class="menu-panel">
+                <div class="menu-header">
+                    <div><span class="menu-kicker">SANDY SYSTEM</span><h2 id="menuTitle">RTV Menu</h2><p id="menuSubtitle"></p></div>
+                    <button id="menuClose" class="menu-close">×</button>
+                </div>
+                <div id="menuOptions" class="menu-options"></div>
+            </div>
+        </section>
+
+        <section id="rtvConfirm" class="rtv-confirm hidden">
+            <div class="confirm-panel">
+                <span class="menu-kicker">SANDY CONFIRM</span>
+                <h2 id="confirmTitle">Bevestigen</h2>
+                <p id="confirmMessage"></p>
+                <div class="confirm-actions">
+                    <button id="confirmCancel" class="rtv-button secondary">Annuleren</button>
+                    <button id="confirmAccept" class="rtv-button primary">Bevestigen</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="rtvProgress" class="rtv-progress hidden">
+            <div class="progress-panel">
+                <div class="progress-header">
+                    <span class="brand-pill"><span class="brand-dot"></span><span>ST</span></span>
+                    <div><h2 id="progressTitle">RTV Towing</h2><p id="progressLabel">Bezig...</p></div>
+                </div>
+                <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+                <p id="progressHint" class="progress-hint">Backspace om te annuleren</p>
+            </div>
+        </section>
+
+
+        <section id="repoDashboard" class="repo-dashboard hidden">
+            <div class="rtv-dash-shell paper-route-shell">
+                <aside class="rtv-sidebar">
+                    <div class="rtv-logo-card">
+                        <img src="../afbeeldingen/rtv_towing_logo.svg" alt="RTV Towing" class="rtv-logo" />
+                        <div class="rtv-logo-text">
+                            <span>Los Santos</span>
+                            <strong>RTV Towing</strong>
+                            <p>Professional Recovery Services</p>
+                        </div>
+                    </div>
+
+                    <nav class="rtv-nav repo-dash-tabs">
+                        <button class="repo-tab active" data-tab="contract"><span>▤</span><strong>Opdracht</strong></button>
+                        <button class="repo-tab" data-tab="skills"><span>⌁</span><strong>Skilltree</strong></button>
+                        <button class="repo-tab" data-tab="stats"><span>▥</span><strong>Statistieken</strong></button>
+                        <button class="repo-tab" data-tab="leaderboard"><span>♛</span><strong>Leaderboard</strong></button>
+                    </nav>
+
+                    <div class="rtv-side-card rtv-side-location">
+                        <span class="repo-dash-label">Solo Recovery Network</span>
+                        <strong>RTV Towing</strong>
+                        <p>Route 68 • Blaine County</p>
+                    </div>
+
+                    <div class="rtv-side-card rtv-side-rep">
+                        <span class="repo-dash-label">Reputatie</span>
+                        <strong id="rtvSideRank">Recovery Operator</strong>
+                        <p>Repo carrière actief</p>
+                    </div>
+                </aside>
+
+                <main class="rtv-main">
+                    <header class="rtv-topbar">
+                        <div>
+                            <span class="menu-kicker">RTV TOWING DISPATCH</span>
+                            <h2>Beschikbare repo-contracten</h2>
+                            <p id="repoDashSubtitle">Welkom terug. Kies je opdracht, beheer je skills en volg de competitie.</p>
+                        </div>
+                        <div class="rtv-top-stats">
+                            <div class="rtv-chip"><span>Level</span><strong id="repoDashLevel">1</strong></div>
+                            <div class="rtv-chip"><span>Skill Points</span><strong id="repoDashSkillPoints">0</strong></div>
+                            <button id="repoDashClose" class="menu-close rtv-close">×</button>
+                        </div>
+                    </header>
+
+                    <section class="repo-dash-grid rtv-overview-grid">
+                        <div class="repo-dash-card repo-dash-level rtv-rank-card">
+                            <div class="rtv-rank-emblem">⚓</div>
+                            <div>
+                                <span class="repo-dash-label">Huidige rang</span>
+                                <strong id="rtvRankTitle">Rang <span id="rtvRankLevelMirror">1</span></strong>
+                                <p>Senioriteit binnen RTV Towing</p>
+                            </div>
+                            <div class="repo-xp-track"><div id="repoDashXpFill" class="repo-xp-fill"></div></div>
+                            <p id="repoDashXpText">0 / 0 XP naar volgend level</p>
+                        </div>
+
+                        <div class="repo-dash-card rtv-metric-card">
+                            <span class="repo-dash-label">Weekscore</span>
+                            <strong id="repoDashWeeklyRepos">0</strong>
+                            <p id="repoDashWeeklyXp">0 XP deze week</p>
+                        </div>
+
+                        <div class="repo-dash-card rtv-metric-card">
+                            <span class="repo-dash-label">Actieve opdracht</span>
+                            <strong id="repoDashActiveStatus">Geen</strong>
+                            <p id="repoDashActiveInfo">Geen actieve repo.</p>
+                        </div>
+                    </section>
+
+                    <div id="repoDashContract" class="repo-tab-panel active rtv-panel rtv-contract-panel">
+                        <div class="rtv-section-title">
+                            <span>01</span>
+                            <div><h3>Contract board</h3><p>Kies je volgende opdracht of beheer je actieve repo.</p></div>
+                        </div>
+
+                        <div class="repo-contract-grid">
+                            <div class="repo-contract-card rtv-contract-status">
+                                <span class="repo-dash-label">Contract status</span>
+                                <strong id="repoContractStatus">Geen actieve opdracht</strong>
+                                <p id="repoContractInfo">Start een repo-opdracht vanuit dit dashboard.</p>
+                                <div id="repoContractBadges" class="repo-contract-badges"></div>
+                            </div>
+
+                            <div class="repo-contract-card rtv-contract-actions">
+                                <span class="repo-dash-label">Acties</span>
+                                <div class="repo-action-grid">
+                                    <button id="repoActionStart" class="repo-action-button primary">Repo starten</button>
+                                    <button id="repoActionCancel" class="repo-action-button danger">Actieve repo annuleren</button>
+                                    <button id="repoActionReturn" class="repo-action-button muted">Vrachtwagen terugbrengen</button>
+                                    <button id="repoActionRefresh" class="repo-action-button ghost">Dashboard vernieuwen</button>
+                                </div>
+                                <p id="repoActionHint">Je target de NPC en beheert alles vanuit dit scherm.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="repoDashSkills" class="repo-tab-panel rtv-panel rtv-skill-panel">
+                        <div class="rtv-section-title skill-tree-title">
+                            <span>02</span>
+                            <div><h3>Skilltree</h3><p>Scroll of sleep door de tree. Klik op een node voor details en unlocks.</p></div>
+                            <div class="skill-tree-legend">
+                                <span><i class="legend-dot unlocked"></i>Vrij</span>
+                                <span><i class="legend-dot available"></i>Beschikbaar</span>
+                                <span><i class="legend-dot locked"></i>Locked</span>
+                            </div>
+                        </div>
+
+                        <div class="repo-skill-layout">
+                            <div id="repoSkillTreeViewport" class="repo-skill-viewport">
+                                <div id="repoSkillTreeCanvas" class="repo-skill-canvas">
+                                    <svg id="repoSkillTreeSvg" class="repo-skill-lines" viewBox="0 0 1120 720" preserveAspectRatio="none"></svg>
+                                    <div id="repoSkillTree" class="repo-skill-tree"></div>
+                                </div>
+                            </div>
+
+                            <aside id="repoSkillDetails" class="repo-skill-details">
+                                <span class="repo-dash-label">Skill details</span>
+                                <strong>Kies een node</strong>
+                                <p>Klik op een skill in de tree om te zien wat hij doet en of je hem kunt vrijspelen.</p>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <div id="repoDashStats" class="repo-tab-panel rtv-panel rtv-stats-panel">
+                        <div class="rtv-section-title">
+                            <span>03</span>
+                            <div><h3>Statistieken</h3><p>Jouw resultaten binnen RTV Towing.</p></div>
+                        </div>
+                        <div class="repo-stat-grid">
+                            <div><span>Succesvol</span><strong id="repoStatSuccess">0</strong></div>
+                            <div><span>Geannuleerd</span><strong id="repoStatCancelled">0</strong></div>
+                            <div><span>Totaal geld</span><strong id="repoStatMoney">€0</strong></div>
+                            <div><span>Totaal parts</span><strong id="repoStatMaterials">0</strong></div>
+                        </div>
+                    </div>
+
+                    <div id="repoDashLeaderboard" class="repo-tab-panel rtv-panel rtv-leaderboard-panel">
+                        <div class="rtv-section-title">
+                            <span>04</span>
+                            <div><h3>Leaderboard</h3><p>Onderlinge strijd tussen RTV Towing medewerkers. Geen extra beloningen, wel bragging rights.</p></div>
+                        </div>
+
+                        <div class="leaderboard-mode-tabs">
+                            <button class="leaderboard-mode active" data-board="weekly">Deze week</button>
+                            <button class="leaderboard-mode" data-board="allTime">All-time repo's</button>
+                            <button class="leaderboard-mode" data-board="materials">Meeste parts</button>
+                        </div>
+
+                        <div id="repoLeaderboardList" class="repo-leaderboard-list"></div>
+                    </div>
+
+                    <footer class="rtv-footer">
+                        <strong>RTV TOWING</strong>
+                        <span>Wij slepen weg, wat anderen laten staan.</span>
+                    </footer>
+                </main>
+            </div>
+        </section>
+
+        <div id="toastContainer" class="toast-container"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

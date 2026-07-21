@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="RTV Towing logo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#18181b"/><stop offset="1" stop-color="#030305"/></linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5361"/><stop offset="0.5" stop-color="#e11d2f"/><stop offset="1" stop-color="#7f0d16"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.65"/></filter>
+  </defs>
+  <rect x="44" y="44" width="632" height="632" rx="158" fill="url(#bg)" stroke="#e11d2f" stroke-width="10"/>
+  <rect x="74" y="74" width="572" height="572" rx="132" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <path d="M180 395h280c32 0 58 26 58 58v34h-60c-9-28-35-48-66-48s-57 20-66 48H236c-9-28-35-48-66-48-10 0-20 2-29 6v-30c0-11 9-20 20-20h19z" fill="#111114" stroke="#e11d2f" stroke-width="8"/>
+    <path d="M214 318h194c17 0 33 9 42 24l34 53H180l28-62c3-9 7-15 6-15z" fill="url(#red)"/>
+    <path d="M456 316h74c25 0 45 20 45 45v34h-88l-31-79z" fill="#111114" stroke="#e11d2f" stroke-width="8"/>
+    <circle cx="170" cy="500" r="42" fill="#07070a" stroke="#e11d2f" stroke-width="10"/>
+    <circle cx="392" cy="500" r="42" fill="#07070a" stroke="#e11d2f" stroke-width="10"/>
+    <circle cx="170" cy="500" r="15" fill="#f1f5f9" opacity="0.78"/>
+    <circle cx="392" cy="500" r="15" fill="#f1f5f9" opacity="0.78"/>
+    <path d="M510 312c34-38 53-84 54-136" fill="none" stroke="#e11d2f" stroke-width="16" stroke-linecap="round"/>
+    <path d="M564 176l48 34" fill="none" stroke="#e11d2f" stroke-width="16" stroke-linecap="round"/>
+    <path d="M612 210l-34 44" fill="none" stroke="#e11d2f" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <text x="360" y="221" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="98" font-weight="900" fill="#ffffff" letter-spacing="6">RTV</text>
+  <text x="360" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#ff5361" letter-spacing="8">TOWING</text>
+</svg>

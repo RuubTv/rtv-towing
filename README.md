@@ -12,6 +12,7 @@ RTV Towing is een Qbox/QBX towing resource met tow rope, winch, ramp, repo job, 
 - ox_inventory item/crafting support
 - qbx_vehiclekeys support
 - Safe netId helpers to reduce stale network object warning spam
+- Change Config.Trucks for your own Flatbed
 
 ## Dependencies
 
@@ -24,6 +25,8 @@ RTV Towing is een Qbox/QBX towing resource met tow rope, winch, ramp, repo job, 
 
 ## Install
 
+- check install.txt for ox_inventory items
+- check images and add them to ox_inventory/web/images
 Place the folder as `rtv-towing` and add this to `server.cfg`:
 
 ```cfg
